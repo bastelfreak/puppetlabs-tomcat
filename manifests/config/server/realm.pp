@@ -1,7 +1,7 @@
 # @summary Configure Realm elements in $CATALINA_BASE/conf/server.xml
 #
 # @param catalina_base
-#   Specifies the base directory of the Tomcat installation. 
+#   Specifies the base directory of the Tomcat installation.
 # @param class_name
 #   Specifies the Java class name of a Realm implementation to use. Maps to the [className XML attribute](http://tomcat.apache.org/tomcat-8.0-doc/config/realm.html#Common_Attributes). Valid options: a string containing a Java class name. `name` passed in your defined type.
 # @param name
