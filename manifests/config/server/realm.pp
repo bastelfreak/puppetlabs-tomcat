@@ -101,6 +101,7 @@ define tomcat::config::server::realm (
   } else {
     # This will create the node if there are no matches
     $_class_name = "set ${path}[${path_expression}]/#attribute/className '${class_name}'"
+    $puppet_name = "rm ${path}[${path_expression}]/#attribute/puppetName '${name}'"
 
     if ! empty($additional_attributes) {
       $_additional_attributes = suffix(prefix(join_keys_to_values($additional_attributes, " '"),
@@ -117,6 +118,7 @@ define tomcat::config::server::realm (
     $changes = delete_undef_values(flatten([
           $__purge_realms,
           $_class_name,
+          $puppet_name,
           $_additional_attributes,
           $_attributes_to_remove,
     ]))
